@@ -1,0 +1,161 @@
+<section style="background-image: url('{{ BASE_PATH }}/assets/img/{% if page.img %}{{ page.img }}{% else %}generic.jpg{% endif %}')" class="content v-center bg-midnight-blue custom-bg">
+    <div>
+        <div class="container">
+            <div class="hero-unit hero-unit-bordered">
+                <h1>{{ page.title }}{% if page.tagline %} <br><small class="subtitle">{{ page.tagline }}</small>{% endif %}</h1>
+            </div>
+        </div>
+    </div>
+    <a class="control-btn fui-check" href="#post"> </a>
+</section>
+
+<section  id="post" class="social">
+  <div style="font-size:5em" class="container text-center">
+    <div class="row">{% if page.socialtagline %}
+      <div class="hero-unit hero-unit-bordered">
+        <h1>{{ page.socialtagline }}</h1>
+        <hr>
+      </div>{% endif %}
+
+      <div class="col-sm-3 col-xs-6">
+        <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+      </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <a class="fa fa-facebook" href="https://facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+      </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <a class="fa fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}%20{{ page.description }}&source=LinkedIn" rel="nofollow" target="_blank" title="Share on LinkedIn"></a>
+      </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <a class="fa fa-google-plus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google plus"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div class="container">
+
+  <section class="relateds text-center">
+    <hr>
+    <h3>By <strong>{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}</strong> &#8212; {% unless page.categories == empty %}Posted in <strong>
+    {{page.categories | array_to_sentence_string}}
+  </strong>{% endunless %} on <strong>{{ page.date | date_to_long_string }}</strong></h3>
+  <hr>
+  </section>
+
+
+{% include themes/bootstrap/nav-bar.html %}
+
+
+
+    <div class="row">
+
+      <div class="col-md-8">{{ content }}</div>
+      <div class="col-md-4">{% include side-bar.html %}</div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-md-4 text-center">
+            <ul class="social-nav model-6">
+              <li><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="google-plus" rel="nofollow" target="_blank" title="Share on Google plus"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}%20{{ page.description }}&source=LinkedIn" rel="nofollow" target="_blank" title="Share on LinkedIn" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" class="twitter" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+              <li>
+                <a href="https://facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook" rel="nofollow" target="_blank" title="Share on Facebook"> <i class="fa fa-facebook"></i></a>
+              </li>
+            </ul>
+    </div>
+
+
+    <div class="col-md-4 text-center">
+      {% unless page.categories == empty %}
+      <p class="lead">
+            <a href="{{ BASE_PATH }}/categories" style="color:black"><i class="fa fa-archive"></i></a>   | {{page.categories | array_to_sentence_string}}
+      </p>
+      {% endunless %}
+    </div>
+    <div class="col-md-4 text-center">
+      {% unless page.tags == empty %}
+      <p class="lead">
+            <a href="{{ BASE_PATH }}/tags" style="color:black"><i class="fa fa-tags"></i></a>   | {{page.tags | array_to_sentence_string}}
+      </p>
+      {% endunless %}
+    </div>
+  </div>
+      <hr>
+
+<div class="row"><div class="col-md-4"></div>
+    <div class="col-md-4 text-center"  style="display: table; margin: 0 auto;">
+      {% if page.previous %}
+      <a style="margin:0.2em" class="btn btn-primary" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo; Previous</a>
+      {% else %}
+      <a style="margin:0.2em" class="prev btn btn-primary disabled">&laquo; Previous</a>
+      {% endif %}
+      <a style="margin:0.2em" class="btn btn-primary" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+      {% if page.next %}
+      <a style="margin:0.2em" class="btn btn-primary" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &raquo;</a>
+      {% else %}
+      <a style="margin:0.2em" class="next btn btn-primary disabled">Next &raquo;</a>
+      {% endif %}
+
+
+    </div>
+    <div class="col-md-4"></div></div>
+<hr>
+
+
+</div>
+
+
+
+
+    <section class="social">
+      <div style="font-size:5em" class="container text-center">
+        <div class="row">
+          <div class="hero-unit hero-unit-bordered">
+            <h1>Share the love</h1>
+            <hr>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+          </div>
+
+          <div class="col-sm-3 col-xs-6">
+            <a class="fa fa-facebook" href="https://facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+          </div>
+
+          <div class="col-sm-3 col-xs-6">
+            <a class="fa fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}%20{{ page.description }}&source=LinkedIn" rel="nofollow" target="_blank" title="Share on LinkedIn"></a>
+          </div>
+
+          <div class="col-sm-3 col-xs-6">
+            <a class="fa fa-google-plus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google plus"></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+<div class="container">
+
+        <div class="col-md-12 text-center"><h2>We <a><i class="fa fa-heart heart"></i></a><---  New Opinions <small class="subtitle">Leave us a comment or a question</small>
+        </h2>
+      </div>
+    {% include JB/comments %}
+</div>

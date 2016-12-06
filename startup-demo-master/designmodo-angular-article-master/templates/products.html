@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav nav-list">
+            <li class="nav-header">Develop</li>
+            <li>
+                <a href="#fakelink">
+                    C++
+                    <span class="badge pull-right">19</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#fakelink">
+                    JavaScript
+                    <span class="badge pull-right">130</span>
+                </a>
+            </li>
+            <li>
+                <a href="#fakelink">
+                    Ruby
+                    <span class="badge pull-right">9</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li class="nav-header">Frameworks</li>
+            <li>
+                <a href="#fakelink">
+                    Flat UI Pro
+                    <span class="badge pull-right">69</span>
+                </a>
+            </li>
+            <li>
+                <a href="#fakelink">
+                    Startup Framework
+                    <span class="badge pull-right">21</span>
+                </a>
+            </li>
+            <li>
+                <a href="#fakelink">
+                    Angular.js
+                    <span class="badge pull-right">40</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{product.fname}}</td>
+                    <td>{{product.lname}}</td>
+                    <td>{{product.year}}</td>
+                    <td>{{product.rating}}</td>
+                    <td>{{product.votes}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav nav-list">
+            <li class="nav-header">Widgets</li>
+            <li ng-class="{active: $location.path() == '/futures/alert' || $location.path() == '/futures'}">
+                <a href="#futures/alert">
+                    Alert
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/file'}">
+                <a href="#futures/file">
+                    File
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/modal'}">
+                <a href="#futures/modal">
+                    Modal
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/checkbox'}">
+                <a href="#futures/checkbox">
+                    CheckBox
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/taginput'}">
+                <a href="#futures/taginput">
+                    Tag input
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/spinner'}">
+                <a href="#futures/spinner">
+                    Spinner
+                </a>
+            </li>
+            <li ng-class="{active: $location.path() == '/futures/slider'}">
+                <a href="#futures/slider">
+                    Slider
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-10" app-view-segment="1">
+    </div>
+</div>

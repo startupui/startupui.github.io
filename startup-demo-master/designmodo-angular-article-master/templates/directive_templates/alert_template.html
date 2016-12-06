@@ -1,0 +1,9 @@
+<div class="alert" ng-class="{false: 'alert-error', true:'alert-success', 'info': 'alert-info', 'warning':'alert-warning'}
+[alert.isSuccess]">
+    <button class="close fui-cross" ng-click="close()"></button>
+    <h4>{{alert.header}}</h4>
+    <div ng-show="transcluded.length <= 1" ng-bind-html="alert.text">
+    </div>
+
+    <div ng-show="transcluded.length > 1" ng-transclude></div>
+</div>
